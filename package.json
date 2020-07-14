@@ -1,9 +1,46 @@
 {
-  "name": "react-redux-datatable",
-  "version": "2.4.7",
-  "description": "Dynamic data table using React and Redux that fetches JSON from a predefined API.",
-  "main": "./lib/index.js",
-  "style": "./dist/styles.css",
+  "_from": "react-redux-datatable@2.4.7",
+  "_id": "react-redux-datatable@2.4.7",
+  "_inBundle": false,
+  "_integrity": "sha512-At2ULzinMGEpt97/gaJM2ampKmr7r7197Lgc0wHxJx4viYIt9OsKfd8uETtjVCgw7iO5LaTj1SfIVbUdmc62IA==",
+  "_location": "/react-redux-datatable",
+  "_phantomChildren": {
+    "@babel/runtime": "7.6.3",
+    "hoist-non-react-statics": "3.3.0",
+    "invariant": "2.2.4",
+    "lodash": "4.17.15",
+    "lodash-es": "4.17.15",
+    "loose-envify": "1.4.0",
+    "prop-types": "15.7.2",
+    "react-is": "16.11.0",
+    "react-lifecycles-compat": "3.0.4",
+    "symbol-observable": "1.2.0"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "react-redux-datatable@2.4.7",
+    "name": "react-redux-datatable",
+    "escapedName": "react-redux-datatable",
+    "rawSpec": "2.4.7",
+    "saveSpec": null,
+    "fetchSpec": "2.4.7"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-redux-datatable/-/react-redux-datatable-2.4.7.tgz",
+  "_shasum": "fabb3469ce8c77aab01b9e55208f58e6f4ac87f8",
+  "_spec": "react-redux-datatable@2.4.7",
+  "_where": "C:\\Users\\PetkoGotsov\\source\\repos\\ReactUI\\ClientApp",
+  "author": {
+    "name": "Sean Wallis",
+    "email": "swwallis88@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sean-ww/react-redux-datatable/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "airbnb-prop-types": "^2.11.0",
@@ -22,6 +59,8 @@
     "redux-thunk": "^2.3.0",
     "url-search-params-polyfill": "^1.2.0"
   },
+  "deprecated": false,
+  "description": "Dynamic data table using React and Redux that fetches JSON from a predefined API.",
   "devDependencies": {
     "@storybook/react": "^5.1.11",
     "axios-mock-adapter": "^1.15.0",
@@ -82,30 +121,12 @@
     "webpack": "^2.4.1",
     "webpack-node-externals": "^1.7.2"
   },
-  "peerDependencies": {
-    "babel-polyfill": "^6.23.0"
-  },
-  "scripts": {
-    "copy:readme": "cpx README.md docs",
-    "build": "npm run copy:readme && npm run fix && npm run build:styles && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
-    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
-    "build:styles": "sass src/assets/sass/styles.scss dist/styles.css --style compressed",
-    "build:umd": "webpack --config webpack.umd.config.js --progress",
-    "build:umd:min": "webpack --config webpack.umd.min.config.js --progress -p",
-    "cover": "BABEL_ENV=test nyc --reporter=lcov --reporter=text-lcov mocha test/.setup.jsx './src/**/*.test.jsx'",
-    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
-    "deploy": "couscous generate && npm run storybook:build && node .dev/deploy.js",
-    "fix": "./node_modules/.bin/eslint --fix './src/**/*.jsx'",
-    "prod": "NODE_ENV=production webpack --watch --progress -p",
-    "storybook": "BABEL_ENV=dev start-storybook -p 9001 -c .storybook",
-    "storybook:init": "node .storybook/mocks/api/generateMockData.js",
-    "storybook:build": "build-storybook -o .couscous/generated/demo",
-    "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sean-ww/react-redux-datatable.git"
-  },
+  "files": [
+    "README.md",
+    "lib/",
+    "dist/"
+  ],
+  "homepage": "https://github.com/sean-ww/react-redux-datatable#readme",
   "keywords": [
     "react",
     "datatable",
@@ -114,15 +135,33 @@
     "grid",
     "react-component"
   ],
-  "files": [
-    "README.md",
-    "lib/",
-    "dist/"
-  ],
-  "author": "Sean Wallis <swwallis88@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sean-ww/react-redux-datatable/issues"
+  "main": "./lib/index.js",
+  "name": "react-redux-datatable",
+  "peerDependencies": {
+    "babel-polyfill": "^6.23.0"
   },
-  "homepage": "https://github.com/sean-ww/react-redux-datatable#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sean-ww/react-redux-datatable.git"
+  },
+  "scripts": {
+    "build": "npm run copy:readme && npm run fix && npm run build:styles && npm run build:commonjs && npm run build:umd && npm run build:umd:min",
+    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:styles": "sass src/assets/sass/styles.scss dist/styles.css --style compressed",
+    "build:umd": "webpack --config webpack.umd.config.js --progress",
+    "build:umd:min": "webpack --config webpack.umd.min.config.js --progress -p",
+    "copy:readme": "cpx README.md docs",
+    "cover": "BABEL_ENV=test nyc --reporter=lcov --reporter=text-lcov mocha test/.setup.jsx './src/**/*.test.jsx'",
+    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
+    "deploy": "couscous generate && npm run storybook:build && node .dev/deploy.js",
+    "fix": "eslint --fix './src/**/*.jsx'",
+    "prod": "NODE_ENV=production webpack --watch --progress -p",
+    "storybook": "BABEL_ENV=dev start-storybook -p 9001 -c .storybook",
+    "storybook:build": "build-storybook -o .couscous/generated/demo",
+    "storybook:init": "node .storybook/mocks/api/generateMockData.js",
+    "test": "mocha"
+  },
+  "style": "./dist/styles.css",
+  "version": "2.4.7"
 }

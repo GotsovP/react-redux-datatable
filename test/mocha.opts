@@ -1,3 +1,0 @@
---require ./test/mocha.env.js
---require ./test/.setup.js
-./src/**/*.test.jsx
