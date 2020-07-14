@@ -178,7 +178,7 @@ class DataTable extends React.Component {
         type="text"
         defaultValue={this.props.searchValue}
         placeholder="Search"
-        onChange={this.props.onSearchChange}
+        onKeyUp={this.props.onSearchChange}
       />
       <span className="input-group-btn" />
     </div>

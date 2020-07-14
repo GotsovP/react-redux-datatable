@@ -105,18 +105,27 @@ export class DataTableContainer extends React.Component {
     });
   };
 
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+  clearTimeout (timer);
+  timer = setTimeout(callback, ms);
+ };
+})();
+
   onSearchChange = e => {
-    const text = e.target.value.trim();
-    if (this.props.tableSettings.useLocalStorage) {
-      updateLocalStorageItem('tableSearch', {
-        [this.props.tableSettings.tableID]: text,
+    var searchEvent = {...e};
+delay(function(){
+    var text = searchEvent.target.value.trim();
+      if (_this.props.tableSettings.useLocalStorage) {
+        (0, _localStorage.updateLocalStorageItem)('tableSearch', _defineProperty({}, _this.props.tableSettings.tableID, text));
+      }
+      _this.searchValue = text;
+      _this.getTableData({});
+      _this.setState({
+        currentPage: 1
       });
-    }
-    this.searchValue = text;
-    this.getTableData({});
-    this.setState({
-      currentPage: 1,
-    });
+  }, 1000 );
   };
 
   onSizePerPageChange = sizePerPage => {
